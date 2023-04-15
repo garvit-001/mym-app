@@ -1,13 +1,45 @@
-import React from "react";
+import {React,useState,useRef, useLayoutEffect}from "react";
 
 import { Img, Text, Line, Button } from "components";
+import '../../styles/sidebar.css'
+import Hamburger from 'hamburger-react'
+// import { Squash as Hamburger } from 'hamburger-react'
+
+
+
 
 const Sidebar = (props) => {
+
+  const burger = document.querySelector('.burger');
+  
+
+  const [isOpen, setOpen] = useState(false)
+  const [thisHeight, setHeight] = useState(0)
+  let styleCSS = {
+    height : thisHeight+'px',
+    overflow:'hidden',
+    transition : 'all 0.3s ease'
+
+} 
+ 
+
+
+  
+  // let visib = window.getComputedStyle(document.querySelector('.burger')).visibility 
+  const changeHeight=()=>{ 
+    if(!isOpen){
+     setHeight(400)
+    }else{
+      setHeight(0)
+    }
+  }
   return (
     <>
       <aside className={props.className}>
         <div className="flex flex-col md:gap-10 gap-[77px] items-center justify-start my-[60px] w-full">
-          <div className="flex flex-row gap-2.5 items-end justify-center w-[47%] md:w-full">
+          
+            <div className="burger" onClick={changeHeight}><Hamburger color="#FFFFFF" toggled={isOpen} toggle={setOpen} onClick={changeHeight}/></div>
+          <div className="logo flex flex-row gap-2.5 items-end justify-center w-[47%] md:w-full">
             <Img
               src="images/img_fire.svg"
               className="h-8 w-[33px]"
@@ -20,7 +52,7 @@ const Sidebar = (props) => {
               Realply
             </Text>
           </div>
-          <div className="flex flex-col items-center justify-start w-full">
+          <div className="options flex flex-col items-center justify-start w-full" style={styleCSS}>
             <div className="flex flex-row items-start justify-start pr-[5px] py-[5px] w-full">
               <Line className="bg-deep_purple_100 h-[30px] w-[5px]" />
               <Img
@@ -100,8 +132,9 @@ const Sidebar = (props) => {
                 Help?
               </Text>
             </div>
-            <div className="flex items-center justify-start mt-10 w-[77%] md:w-full">
-              <div className="border border-deep_purple_100 border-solid flex flex-col items-center justify-end p-5 rounded-[24px] w-full">
+          </div>
+            <div className="upgrade flex items-center justify-start mt-10 w-[77%] md:w-full">
+              <div className=" border border-deep_purple_100 border-solid flex flex-col items-center justify-end p-5 rounded-[24px] w-full">
                 <div className="flex items-center justify-start mt-[5px] w-auto md:w-full">
                   <Text
                     className="font-roboto text-gray_50 text-left"
@@ -128,7 +161,7 @@ const Sidebar = (props) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row gap-[15px] items-start justify-center mt-10 p-[9px] w-full">
+            <div className="logout flex flex-row gap-[15px] items-start justify-center mt-10 p-[9px] w-full">
               <Img
                 src="images/img_arrowleft.svg"
                 className="h-5 mb-0.5 ml-[69px] w-5"
@@ -141,7 +174,6 @@ const Sidebar = (props) => {
                 Log out
               </Text>
             </div>
-          </div>
         </div>
       </aside>
     </>

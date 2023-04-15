@@ -4,6 +4,7 @@ import Sidebar from "components/Sidebar";
 import { Text, List, Button, Img, Line, Input, CheckBox } from "components";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import '../../styles/sidebar.css'
 
 const OnePage = () => {
   return (
@@ -11,9 +12,9 @@ const OnePage = () => {
       <div className="bg-white_A700 flex font-sulphurpoint items-center justify-end mx-auto w-full">
         <div className="flex flex-col justify-end w-full">
           <div className="flex md:flex-col flex-row md:gap-5 items-start justify-evenly w-full">
-            <Sidebar className="bg-gray_900 flex flex-col md:hidden justify-start md:px-5 shadow-bs w-[252px]" />
-            <div className="bg-gray_50 flex flex-1 items-end justify-start p-5 md:px-5 w-full">
-              <div className="flex flex-col items-start justify-start mb-12 mt-[34px] w-[95%] md:w-full">
+            <Sidebar className="sidebar bg-gray_900 flex flex-col justify-start md:px-5 shadow-bs w-[252px]" />
+            <div className="dashboard bg-gray_50 flex flex-1 items-end justify-start p-5 md:px-5 w-full">
+              <div className="logo flex flex-col items-start justify-start mb-12 mt-[34px] w-[95%] md:w-full">
                 <div className="flex flex-col md:gap-10 gap-[113px] items-start justify-start md:ml-[0] ml-[18px] w-[85%] md:w-full">
                   <Text
                     className="text-gray_900 text-left w-auto"
@@ -860,21 +861,15 @@ const OnePage = () => {
                       >
                         Recent Activity
                       </Text>
-                      <div className="bg-gray_200_7f md:h-4 h-8 p-[7px] relative rounded-lg w-[16%] sm:w-full">
+                      <div className="bg-gray_200_7f md:h-4 h-8 p-[7px] relative rounded-lg w-[20%] sm:w-full">
                         <CheckBox
                           className="font-bold my-auto sm:pr-5 text-base text-gray_900 text-left"
-                          inputClassName="absolute mr-[5px]"
+                          inputClassName=" mr-[5px]"
                           name="24h"
                           id="24h"
-                          label="24h"
+                          label="Last 24h"
                         ></CheckBox>
-                        <CheckBox
-                          className="font-normal my-auto not-italic sm:pr-5 text-base text-gray_900 text-left"
-                          inputClassName="absolute mr-[5px]"
-                          name="last"
-                          id="last"
-                          label="Last"
-                        ></CheckBox>
+                        
                       </div>
                     </div>
                     <div className="flex flex-row gap-[15px] items-center justify-start mt-[31px] w-[45%] md:w-full">
@@ -883,10 +878,11 @@ const OnePage = () => {
                         className="h-9 md:h-auto rounded-[50%] w-9"
                         alt="ellipseFive"
                       />
+                      
                       <Text
                         className="font-bold text-gray_900 text-left w-auto"
                         variant="body4"
-                      ></Text>
+                      >Alex Morgan sent you a message.</Text>
                     </div>
                     <Line className="bg-gray_200_cc h-0.5 mt-5 w-full" />
                     <div className="flex sm:flex-col flex-row gap-[15px] items-center justify-start mt-[13px] w-[57%] md:w-full">
@@ -898,7 +894,7 @@ const OnePage = () => {
                       <Text
                         className="font-bold text-gray_900 text-left w-auto"
                         variant="body4"
-                      ></Text>
+                      >Mujo Prosper sent you a connection request.</Text>
                     </div>
                     <Line className="bg-gray_200_cc h-0.5 mt-5 w-full" />
                     <div className="flex md:flex-col flex-row gap-[15px] items-center justify-start mt-[13px] w-[86%] md:w-full">
@@ -916,47 +912,15 @@ const OnePage = () => {
                       <Text
                         className="font-bold text-gray_900 text-left w-auto"
                         variant="body4"
-                      ></Text>
+                      >Upcoming Task - Create a campaign for designers due on 02/04/2023.</Text>
+                      
                     </div>
                   </div>
-                  <div className="bg-gray_200_7f h-[156px] mb-6 md:mt-0 mt-[62px] outline outline-[1px] outline-gray_900_66 rounded-[3px] w-[1%]"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="font-roboto h-[742px] md:h-[974px] md:ml-[0] ml-[131px] mr-[194px] md:px-5 relative w-[79%] md:w-full">
-            <div className="flex md:flex-col flex-row md:gap-10 h-full items-center justify-between m-auto w-full">
-              <div className="flex flex-col relative w-[63%] md:w-full">
-                <div className="flex items-start justify-start mx-auto pb-[38px] sm:pr-5 pr-[38px] w-full">
-                  <Text
-                    className="mb-[27px] text-left text-white_A700 w-auto"
-                    as="h1"
-                    variant="h1"
-                  >
-                    5x Your Lead Flow
-                  </Text>
-                </div>
-                <Text
-                  className="leading-[40.00px] mt-[-8.7px] mx-auto not-italic text-left text-white_A700 w-full z-[1]"
-                  as="h5"
-                  variant="h5"
-                >
-                  Lorem ipsum dolor sit amet consectetur. Risus sit vel sit in
-                  quisque neque. Elit amet ut pellentesque purus morbi
-                  fringilla. Urna morbi dui euismod curabitur ullamcorper aenean
-                  tempus nibh.
-                </Text>
-              </div>
-              <div className="flex md:flex-1 items-center justify-start rounded-[64px] w-[29%] md:w-full">
-                <Img
-                  src="images/img_image.png"
-                  className="h-[742px] md:h-auto object-cover rounded-[64px] w-full"
-                  alt="image"
-                />
-              </div>
-            </div>
-            <div className="absolute h-[550px] right-[24%] rounded-[71px] top-[3%] w-[550px]"></div>
-          </div>
+         
         </div>
       </div>
     </>
