@@ -1,0 +1,79 @@
+.dashboard > div{
+    width: 100% !important;
+}
+
+.burger{
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    visibility: hidden;
+}
+
+
+@media screen and (max-width:1040px) {
+    .sidebar{
+        width: 100%;
+        position: relative;
+    
+    }
+    .sidebar > div{
+        gap:0.2rem;
+    }
+    .sidebar *{
+        margin: 0.5rem;
+        padding: 0;
+    }
+
+    .logo{
+        width: 20%;
+      
+    }
+    .options{
+        flex-direction: row;
+       
+
+    }
+
+    .upgrade{
+        width: 100%;
+    }
+    .options div{
+        
+    }
+
+    .logout{
+        width: 20%;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+
+    }
+}
+
+
+@media screen and (max-width:840px){
+    .options{
+        flex-wrap: wrap;
+    }
+
+    .burger{
+        visibility: visible;
+    }
+}
+
+@media screen and (min-width: 839px) {
+    .options{
+        height: 100px !important;
+    }
+}
+@media screen and (min-width: 1039px) {
+        .options{
+            height: 600px !important;
+        }
+    
+}
+
+
+
+
+
